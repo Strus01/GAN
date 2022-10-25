@@ -3,6 +3,10 @@
 #### You can find dataset on [kaggle](https://www.kaggle.com/datasets/bryanb/abstract-art-gallery)
 #### Network was build based on [DCGAN paper](https://arxiv.org/pdf/1511.06434v2.pdf)
 
-You can find generated images [here]()
- 
-<img src="generated_imgs/generated_images.gif" alt="GIF from all generated images">
+You can find generated images [here](https://github.com/Strus01/GAN/tree/main/generated_imgs)
+
+Here is a GIF from all generated images
+
+<p align="center">
+<img src="generated_imgs/generated_images.gif" alt="GIF from all generated images" title="GIF from all generated images">
+</p>
