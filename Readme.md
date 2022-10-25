@@ -7,7 +7,7 @@ You can find generated images [here](https://github.com/Strus01/GAN/tree/main/ge
 
 Here are images from last epoch
 <p align="center">
-<img src="generated_imgs/generated_img_299.png." alt="Last epoch images" title="Last epoch images">
+<img src="generated_imgs/generated_img_299.png" alt="Last epoch images" title="Last epoch images">
 </p>
 
 And here is a GIF from all generated images
