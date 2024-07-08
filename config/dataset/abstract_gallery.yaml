@@ -1,0 +1,6 @@
+data_dir: 'dataset/abstract_gallery'
+image_channels: 3
+image_size: [64, 64]
+batch_size: 64
+num_workers: 15
+train_size: 0.8

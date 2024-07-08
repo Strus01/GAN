@@ -1,0 +1,43 @@
+defaults:
+ - dataset: abstract_gallery 
+
+model:
+  discriminator:
+    conv_blocks: # format (in_channels, out_channels, kernel_size, stride, padding)
+      - (${dataset.image_channels}, 64, 4, 2, 1)
+      - (64, 128, 4, 2, 1)
+      - (128, 256, 4, 2, 1)
+      - (256, 512, 4, 2, 1)
+    output_layer:
+      in_channels: 512
+      out_channels: 1
+      kernel_size: 4
+      stride: 1
+      padding: 0
+    leaky_relu_negative_slope: 0.2
+  generator:
+    latent_dim: 100
+    conv_blocks: # format (in_channels, out_channels, kernel_size, stride, padding)
+      - (${model.generator.latent_dim}, 512, 4, 1, 0)
+      - (512, 256, 4, 2, 1)
+      - (256, 128, 4, 2, 1)
+      - (128, 64, 4, 2, 1)
+    output_layer:
+      in_channels: 64
+      out_channels: ${dataset.image_channels}
+      kernel_size: 4
+      stride: 2
+      padding: 1
+
+train:
+  trainer:
+    max_epochs: 200
+    check_val_every_n_epoch: 5
+    accelerator: gpu
+    devices: 1
+  optimizer:
+    learning_rate: 0.0002
+    b1: 0.5
+    b2: 0.999
+  ckpt_path:
+  
